@@ -17,35 +17,17 @@
 }
 </style>
 <script>
- document.addEventListener("DOMContentLoaded", function(event) {
-    var scene = document.querySelector("a-scene");
-    var vid = document.getElementById("video");
+var vid = document.getElementById('video');
+console.log(vid);
 
-    if (scene.hasLoaded) {
-      run();
-    } else {
-      scene.addEventListener("loaded", run);
-    }
-
-    function run () {
-     /* if(AFRAME.utils.device.isMobile()) {
-        document.querySelector('#splash').style.display = 'flex';
-        document.querySelector('#splash').addEventListener('click', function () {
-          playVideo();
-          this.style.display = 'none';
-        })
-      } else {*/
-          playVideo();
-      //}
-    }
-
-    function playVideo () {
-      vid.play();
-
-    }
-  })
+document.getElementById('play-button').addEventListener("click", function(e){
+  this.style.display = 'none';
+  vid.play();
+}, false);
 </script>
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+	
+	<button id="play-button">Play</button>
 
 
 <a-scene embedded arjs='sourceType: webcam;'>
