@@ -33,7 +33,7 @@
 var vid = document.getElementById('video');
 console.log(vid);
 
-document.getElementById('play-button').addEventListener("click", function(e){
+document.getElementById('play-button').addEventListener("click touchstart", function(e){
   this.style.display = 'none';
   vid.play();
 }, false);
