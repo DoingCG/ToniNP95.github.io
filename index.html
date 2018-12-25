@@ -4,6 +4,7 @@
 <script src="js/aframe-ar.js"></script>
 <script src="https://rawgit.com/blairmacintyre/aframe-look-at-billboard-component/master/dist/aframe-look-at-billboard-component.min.js"></script>
 
+
 <style type="text/css">
 	
 #arjsDebugUIContainer 
@@ -30,7 +31,7 @@ document.getElementById('play-button').addEventListener("click", function(e){
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 	
 	
-
+<button id="play-button">Play</button>
 
 <a-scene embedded arjs='sourceType: webcam;'>
 	
@@ -40,11 +41,11 @@ document.getElementById('play-button').addEventListener("click", function(e){
 	
 	<a-video id="video" src="#video" width="1.8" height="1" position="0 0 0" rotation="0 0 0"></a-video>
 	 
-	 <a-box id="play-button" width="0.4" height="0.4" position="2 0 0" depth="0.0" color="red"> 
+	 <!--<a-box id="play-button" width="0.4" height="0.4" position="2 0 0" depth="0.0" color="red"> 
 		 <a-entity text="text: What's up" scale="0.2 0.2 0.2" color="blue" position="-0.3 0.01 0"> 
 	 </a-entity> </a-box>
 	
-	<!--<a-entity id="refresh-button" geometry="primitive: box" material="color: red" position="2 0 0"></a>
+	<a-entity id="refresh-button" geometry="primitive: box" material="color: red" position="2 0 0"></a>
 
 		 <a-sphere position="0 0.5 0" radius="0.5" color="#EF2D5E"></a-sphere>
 		<a-plane position="0 0 0" rotation="-90 0 0" width="1" height="1" color="#7BC8A4"></a-plane>  
