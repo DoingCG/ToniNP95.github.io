@@ -25,6 +25,9 @@
   height: 2em;
   z-index: 10;
 }
+#scene{
+	z-index:0;
+}
 </style>
 <script>
 var vid = document.getElementById('video');
@@ -42,7 +45,7 @@ document.getElementById('play-button').addEventListener("click", function(e){
 	
 <button id="play-button">Play</button>
 
-<a-scene embedded arjs='sourceType: webcam;'>
+<a-scene embedded arjs='sourceType: webcam;' index="scene">
 	
 	<a-assets> 
 		<video id="video" autoplay="false" loop="true" src="assets/VID_20161226_130525.mp4 "></video>
