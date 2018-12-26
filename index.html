@@ -35,6 +35,7 @@ console.log(vid);
 
 document.getElementById('play-button').addEventListener("click", function(e){
   this.style.display = 'none';
+  document.getElementById('play-button').style.display.'none';
   vid.play();
 }, false);
 	
@@ -49,13 +50,14 @@ document.getElementById('play-button').addEventListener("click", function(e){
 <a-scene id="scene" embedded arjs='sourceType: webcam;' >
 	
 	<a-assets> 
-		<video id="video" preload="true" src="assets/VID_20161226_130525.mp4 "     crossOrigin="anonymous"
-    autoplay="false"
-    loop="true"
-    style="display: none"></video>
+		<video id="video"  src="assets/VID_20161226_130525.mp4 " ></video>
  	</a-assets> 
 	
-	<a-video id="video" src="#video" width="1.8" height="1" position="0 0 0" rotation="0 0 0"></a-video>
+	<a-video id="video" preload="true" src="#video" width="1.8" height="1" position="0 0 0" rotation="0 0 0"
+		 webkit-playsinline  crossOrigin="anonymous"
+    autoplay="false"
+    loop="true"
+    style="display: none"></a-video>
 	 
 	 <!--<a-box id="play-button" width="0.4" height="0.4" position="2 0 0" depth="0.0" color="red"> 
 		 <a-entity text="text: What's up" scale="0.2 0.2 0.2" color="blue" position="-0.3 0.01 0"> 
