@@ -32,18 +32,19 @@
 }
 </style>
 <script>
-var vid = document.getElementById('vid');
+var vid = document.getElementById("vid");
+var button=document.getElementById("play-button");
 console.log(vid);
 	
 function buttonClick()
 	{
-		document.getElementById('play-button').style.color=red;
-		document.getElementById('play-button').style.backgroundColor=green;
+		button.style.color=red;
+		button.style.backgroundColor=green;
 	}
 
-document.getElementById('play-button').addEventListener("click", function(e){
-  this.style.display = 'none';
-  document.getElementById('play-button').style.visibility='hidden';
+button.addEventListener("click", function(e){
+  //this.style.display = 'none';
+  button.style.visibility='hidden';
   vid.play();
 }, false);
 	
