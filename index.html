@@ -34,6 +34,9 @@
 #myVid{
 	z-index:5;
 	}
+	#video-js{
+	z-index:8;
+	}
 </style>
 <script>
 	var player = videojs(document.querySelector('video'));
@@ -78,6 +81,7 @@ function playVideo()
 <button id="playButton" onclick="playVideo()" >Play</button>
 <video 
       class="video-js" 
+      id="video-js"
       controls 
       preload="auto" 
       width="640" 
