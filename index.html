@@ -24,8 +24,8 @@
   width: 8em;
   height: 4em;
   z-index: 10;
-  color: green;
-  background-color: blue;
+  /*color: green;
+  background-color: blue;*/
 }
 #scene{
 	z-index:1;
@@ -40,15 +40,16 @@ function buttonClick()
 	{
 		button.style.color=red;
 		button.style.backgroundColor=green;
-		alert("buttonClick");
+		//alert("buttonClick");
 	}
-
-button.addEventListener("click", function(e){
-  alert("eventListener");
-  //this.style.display = 'none';
-  button.style.visibility='hidden';
-  vid.play();
-}, false);
+function playVideo()
+	{
+	alert("eventListener");
+  	//this.style.display = 'none';
+  	button.style.visibility='hidden';
+  	vid.play();		
+	}
+button.addEventListener("click", playVideo, false);
 	
 </script>
 
