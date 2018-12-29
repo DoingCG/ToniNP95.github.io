@@ -33,7 +33,7 @@
 </style>
 <script>
 var vid = document.getElementById("vid");
-var button=document.getElementById("playButton");
+var PlayBut=document.getElementById("playButton");
 console.log(vid);
 	
 function buttonClick()
@@ -41,16 +41,16 @@ function buttonClick()
 		button.style.color=red;
 		button.style.backgroundColor=green;
 		alert("patata");
-		alert(button.id);
+		alert(PlayBut.id);
 	}
 function playVideo()
 	{
 	alert("eventListener");
   	//this.style.display = 'none';
-  	button.style.visibility='hidden';
+  	PlayBut.style.visibility='hidden';
   	vid.play();		
 	}
-button.addEventListener("click", playVideo, false);
+PlayButt.addEventListener("click", playVideo, false);
 	
 </script>
 
