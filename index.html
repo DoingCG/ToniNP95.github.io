@@ -36,6 +36,17 @@
 	}
 </style>
 <script>
+	var player = videojs(document.querySelector('video'));
+
+player.ready(function() {
+   player.src({
+		src: "//vjs.zencdn.net/v/oceans.mp4"
+   });
+});
+	
+	
+	
+	///
 var videito = document.getElementById("myVid");
 var PlayBut=document.getElementById("playButton");
 //console.log(vid);
@@ -65,7 +76,17 @@ function playVideo()
 	
 	
 <button id="playButton" onclick="playVideo()" >Play</button>
-	
+<video 
+      class="video-js" 
+      controls 
+      preload="auto" 
+      width="640" 
+      height="268"
+      autoplay
+      muted
+      playsinline>
+    <!-- <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4"> -->
+  </video>	
 <video id="myVid" width="400" height="200" >
   <source src="assets/videoBaja.mp4" type="video/mp4">
   <p>Your browser doesn't support HTML5 video. Here is
