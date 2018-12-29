@@ -38,11 +38,13 @@ console.log(vid);
 	
 function buttonClick()
 	{
+		alert("buttonClick");
 		button.style.color=red;
 		button.style.backgroundColor=green;
 	}
 
 button.addEventListener("click", function(e){
+  alert("eventListener");
   //this.style.display = 'none';
   button.style.visibility='hidden';
   vid.play();
