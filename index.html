@@ -24,7 +24,7 @@
   width: 8em;
   height: 4em;
   z-index: 10;
-  color: green;
+  color: red;
   /*background-color: blue;*/
 }
 #scene{
@@ -50,7 +50,7 @@ function playVideo()
   	PlayBut.style.visibility='hidden';
   	vid.play();		
 	}
-PlayButt.addEventListener("click", playVideo, false);
+//PlayButt.addEventListener("click", playVideo, false);
 	
 </script>
 
@@ -58,7 +58,7 @@ PlayButt.addEventListener("click", playVideo, false);
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 	
 	
-<button id="playButton" type="button" onclick="buttonClick()" >Play</button>
+<button id="playButton" onclick="buttonClick()" >Play</button>
 
 <a-scene id="scene" embedded arjs='sourceType: webcam;' >
 	
