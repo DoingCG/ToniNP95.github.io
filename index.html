@@ -29,7 +29,7 @@
   width: 8em;
   height: 4em;
   z-index: 10;
-  color: blue;
+  color: red;
   /*background-color: blue;*/
 }
 #scene{
@@ -43,7 +43,7 @@
 	}
 </style>
 <script>
-	var player = videojs("video-js");
+	var player = videojs("videoExt");
 
 player.ready(function() {
    player.src({
@@ -85,7 +85,7 @@ function playVideo()
 <button id="playButton" onclick="playVideo()" >Play</button>
 <video 
       class="video-js" 
-      id="video-js"
+      id="videoExt"
       controls 
       preload="auto" 
       width="640" 
