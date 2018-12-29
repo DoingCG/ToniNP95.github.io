@@ -32,6 +32,11 @@
 <script>
 var vid = document.getElementById('vid');
 console.log(vid);
+	
+function buttonClick()
+	{
+		document.getElementById('play-button').styke.color=red;
+	}
 
 document.getElementById('play-button').addEventListener("click", function(e){
   this.style.display = 'none';
@@ -45,7 +50,7 @@ document.getElementById('play-button').addEventListener("click", function(e){
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 	
 	
-<button id="play-button">Play</button>
+<button id="play-button" onClick="buttonClick" >Play</button>
 
 <a-scene id="scene" embedded arjs='sourceType: webcam;' >
 	
