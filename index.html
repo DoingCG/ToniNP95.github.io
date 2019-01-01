@@ -93,7 +93,7 @@ function playVideo()
 		AFRAME.registerComponent('rotation-reader', {
     tick: function () {
         var rotation = this.el.getAttribute('rotation');
-	    //alert(rotation)
+	    alert(rotation)
 	    video.setAttribute('rotation',rotation);
     }
   });
