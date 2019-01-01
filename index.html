@@ -98,8 +98,8 @@ function playVideo()
         //var rotation = this.el.getAttribute('rotation');
 	    //video.setAttribute('rotation',rotation);
 	    camera.object3D.updateMatrixWorld();
-	    var rotation=camera.object3D.rotation;
-	    video.object3D.rotation=rotation;
+	    var rotation=camera.object3D.getWorldQuaternion();
+	    video.object3D.setRotationFromQuaternion();
 	    video.object3D.updateMatrixWorld();
 	    //alert(rotation.y)
     }
