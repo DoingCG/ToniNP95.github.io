@@ -41,7 +41,7 @@
 	#video-js{
 	z-index:8;
 	}
-</style>-->
+</style>
 <script>
 	var player = videojs("videoExt");
 
@@ -76,31 +76,11 @@ function playVideo()
 	}
 //PlayButt.addEventListener("click", playVideo, false);
 	
-</script>
+</script>-->
 
 </head>
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 	
-	
-<!--button id="playButton" onclick="playVideo()" >Play</button>
-<video 
-      class="video-js" 
-      id="videoExt"
-      controls 
-      preload="auto" 
-      width="640" 
-      height="268"
-      autoplay
-      muted
-      playsinline>
-    <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-  </video>	
-<video id="myVid" width="400" height="200" >
-  <source src="assets/videoBaja.mp4" type="video/mp4">
-  <p>Your browser doesn't support HTML5 video. Here is
-     a <a href="https://github.com/ToniNP95/ToniNP95.github.io/blob/master/assets/videoBaja.mp4">link to the video</a> instead.</p>
-</video>-->
-
 <a-scene id="scene" embedded arjs='sourceType: webcam;' >
 	
 <a-assets> 
@@ -115,9 +95,9 @@ function playVideo()
 	  <img id="play-image" src="btn-play_video.png" transparent="true">
 	 
  	</a-assets>
-	<a-marker id='marker' preset='custom' type='pattern' url='https://raw.githubusercontent.com/ToniNP95/AR_resources/master/pattern-marker.patt'>
+	<!--<a-marker id='marker' preset='custom' type='pattern' url='https://raw.githubusercontent.com/ToniNP95/AR_resources/master/pattern-marker.patt'>
 		<a-box color="green" scale=" 0.3 0.3 0.3" position="0 0 0" rotation="270 0 0"><a-text id="debugText" position="0 0 -0.4" value="Hello, World!"></a-text></a-box>
-	</a-marker>
+	</a-marker>-->
 	
 	
     <a-video id="vid" preload="true" src="#video" width="1.8" height="1" position="0 0 -1"  event-set__enter="_event: mouseenter; width: 1.8; height: 1;"
