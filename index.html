@@ -101,7 +101,7 @@ function playVideo()
 	    var rotation=camera.object3D.getWorldQuaternion();
 	    video.object3D.setRotationFromQuaternion(rotation);
 	    video.object3D.updateMatrixWorld();
-	    console.log( video.quaternion, video.getWorldQuaternion() );
+	    console.log( video.object3D.quaternion, video.object3D.getWorldQuaternion() );
 	    //alert(rotation.y)
     }
   });
