@@ -107,7 +107,7 @@ function playVideo()
 	</a-video>
  
 
-		  <a-marker-camera id="camera" preset='custom' type='pattern' url='https://raw.githubusercontent.com/ToniNP95/AR_resources/master/pattern-marker.patt'></a-marker-camera>
+		  <a-marker-camera id="camera" rotation-reader preset='custom' type='pattern' url='https://raw.githubusercontent.com/ToniNP95/AR_resources/master/pattern-marker.patt'></a-marker-camera>
 
 	</a-scene>
 	
@@ -128,10 +128,17 @@ function bucle() {
 bucle();
  //var scene = document.querySelector('a-scene');
 
-
+AFRAME.registerComponent('rotation-reader', {
+    tick: function () {
+        var rotation = this.el.getAttribute('rotation');
+	    alert(rotation)
+	    video.setAttribute('rotation',rotation);
+    }
+  });
 camera.addEventListener('componentchanged', function (evt) {
   if (evt.name === 'rotation') {
     console.log('Entity has rotated from', evt.oldData, 'to', evt.newData, '!');
+    //alert('Entity has rotated from', evt.oldData, 'to', evt.newData, '!');
   }
 });	
 scene.onload=run();
