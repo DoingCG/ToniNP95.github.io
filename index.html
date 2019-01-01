@@ -9,6 +9,9 @@
 <script src="https://rawgit.com/blairmacintyre/aframe-look-at-billboard-component/master/dist/aframe-look-at-billboard-component.min.js"></script>
 
 	<script src="//vjs.zencdn.net/5.19/video.js"></script>
+	
+<script src="build/three.js"></script>
+<script src='build/three.min.js'></script>
 
 <!--<style type="text/css">
 	
@@ -92,8 +95,10 @@ function playVideo()
 		
 		AFRAME.registerComponent('rotation-reader', {
     tick: function () {
-        var rotation = this.el.getAttribute('rotation');
-	    video.setAttribute('rotation',rotation);
+        //var rotation = this.el.getAttribute('rotation');
+	    //video.setAttribute('rotation',rotation);
+	    var rotation=camera.object3D.rotation;
+	    video.object3D.rotation=rotation;
 	    alert(rotation.y)
     }
   });
