@@ -97,8 +97,10 @@ function playVideo()
     tick: function () {
         //var rotation = this.el.getAttribute('rotation');
 	    //video.setAttribute('rotation',rotation);
+	    camera.updateMatrixWorld();
 	    var rotation=camera.object3D.rotation;
 	    video.object3D.rotation=rotation;
+	    video.updateMatrixWorld();
 	    //alert(rotation.y)
     }
   });
