@@ -103,37 +103,90 @@ function playVideo()
 
 <a-scene id="scene" embedded arjs='sourceType: webcam;' >
 	
-	<a-assets> 
-		<video id="video"  src="assets/VID_20161226_130525.mp4 " webkit-playsinline  crossOrigin="anonymous"
-    autoplay="true"
-    loop="true"
-    style="display: none"></video>
- 	</a-assets> 
-	
-	<a-video id="vid" preload="true" src="#video" width="1.8" height="1" position="0 0 0" rotation="270 0 0" ></a-video>
+<a-assets> 
+    <video id="video"  src="https://instagram.fmad7-1.fna.fbcdn.net/vp/8df35c8a81408c354f3f385d99bb55ea/5C2B0807/t50.2886-16/49682316_2053630514726334_789195232708132864_n.mp4?_nc_ht=instagram.fmad7-1.fna.fbcdn.net " 
+    <!-- webkit-playsinline  
+    crossOrigin="anonymous"-->
+    type="video/mp4"
+    poster="https://instagram.fmad7-1.fna.fbcdn.net/vp/dbcd3714bea09773226546e0fbc56f17/5C2ADC82/t51.2885-15/e35/46552306_378004282983459_4023662717802556687_n.jpg?_nc_ht=instagram.fmad7-1.fna.fbcdn.net"
+    <!-- autoplay="true"
+    loop="true"-->
+    controls ></video>
+	  <img id="play-image" src="btn-play_video.png" transparent="true">
 	 
-	 <!--<a-box id="play-button" width="0.4" height="0.4" position="2 0 0" depth="0.0" color="red"> 
-		 <a-entity text="text: What's up" scale="0.2 0.2 0.2" color="blue" position="-0.3 0.01 0"> 
-	 </a-entity> </a-box>
+ 	</a-assets>
+	<a-marker id='marker' preset='custom' type='pattern' url='https://raw.githubusercontent.com/ToniNP95/AR_resources/master/pattern-marker.patt'>
+		<a-box color="green" scale=" 0.3 0.3 0.3" position="0 0 0" rotation="270 0 0"><a-text id="debugText" position="0 0 -0.4" value="Hello, World!"></a-text></a-box>
+	</a-marker>
 	
-	<a-entity id="refresh-button" geometry="primitive: box" material="color: red" position="2 0 0"></a>
+	
+    <a-video id="vid" preload="true" src="#video" width="1.8" height="1" position="0 0 -1"  event-set__enter="_event: mouseenter; width: 1.8; height: 1;"
+            event-set__leave="_event: mouseleave;  width: 1.8; height: 1;">
+	    <a-image id="play" src="#play-image" width="0.4" height="0.4" position="0 0 0.1" transparent="true" material="alphaTest: 0.5" data-clickable visible="true" onclick="dosomething()"></a-image>
 
-		 <a-sphere position="0 0.5 0" radius="0.5" color="#EF2D5E"></a-sphere>
-		<a-plane position="0 0 0" rotation="-90 0 0" width="1" height="1" color="#7BC8A4"></a-plane>  
-		
-		<a-image position="0 0 0" rotation="90 180 0" height="1" width="1"  src="https://raw.githubusercontent.com/mattGraphics/randomfiles/master/red-dot.png"></a-image>
-		
-		<a-image position="0 0.2 0" rotation="270 0 0" height="1" width="1"  src="https://raw.githubusercontent.com/mattGraphics/randomfiles/master/matt-face.png"></a-image> 
-		
-		<a-image position="0 0.4 0" rotation="270 0 0" height="1" width="1"  src="https://raw.githubusercontent.com/mattGraphics/randomfiles/master/hello-you-text.png"></a-image>
-
-		  <a-marker-camera id="camera" preset='custom' type='pattern' url='https://raw.githubusercontent.com/ToniNP95/AR_resources/master/pattern-marker.patt'></a-marker-camera>--> 
+	</a-video>
+ 
 
 		  <a-marker-camera id="camera" preset='custom' type='pattern' url='https://raw.githubusercontent.com/ToniNP95/AR_resources/master/pattern-marker.patt'></a-marker-camera>
+
 	</a-scene>
 	
+<script>
+
+	var scene=document.getElementById("scene");
+	var video=document.getElementById("vid");
+	var play=document.getElementById("play");
+	var mark=document.getElementById("marker");
+	var camera=document.getElementById("camera");
+	var i=0;
 	
 
+function bucle() {
+  requestAnimationFrame( bucle );
+  //alert("bucle");
+}
+bucle();
+ //var scene = document.querySelector('a-scene');
+
+
+camera.addEventListener('componentchanged', function (evt) {
+  if (evt.name === 'rotation') {
+    console.log('Entity has rotated from', evt.oldData, 'to', evt.newData, '!');
+  }
+});	
+scene.onload=run();
+		
+function run () {
+  requestAnimationFrame( run );
+  //var entity = document.getElementById('debugBox');
+        /*var position=mark.getAttribute('position');
+	//alert("actualizando pos");
+	video.setAttribute('position',position);*/
+	//scene.object3D.updateMatrixWorld();
+	//var position	= THREEx.ObjCoord.worldPosition(mark.object3D);
+	//video.setAttribute('position',position);
+	
+	
+	 if(document.getElementById("video").paused)
+ {	 
+	play.setAttribute("visible","true");
+ }
+
+}
+
+	
+   function dosomething(){
+	play.setAttribute("visible","false");
+	//document.getElementById("vid").play();
+	document.getElementById("video").play();
+	   
+	//alert("patata"); 
+   }
+  /*document.getElementById("vid").addEventListener("mouseenter",function(){
+	  dosomething();
+  },false);*/
+	
+</script>
 	
 </body>
 </html>
